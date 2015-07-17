@@ -8,9 +8,13 @@ and open the template in the editor.
     Author     : vinayak
 */
 
+html{ 
+    
+background:url(../images/back2.jpg);
+background-repeat:repeat-y;
 
-html{
+}
+h1{
     
-    background: url("images/Background.jpg");
-    
+    color: red;
 }
