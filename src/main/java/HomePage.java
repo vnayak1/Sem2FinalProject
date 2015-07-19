@@ -56,36 +56,36 @@ public class HomePage extends HttpServlet {
 
         out.write("hiiiiiiiiiiiiii12");
        
-
-        JsonObjectBuilder json;
-        JsonArrayBuilder productarray = Json.createArrayBuilder();
+//
+//        JsonObjectBuilder json;
+//        JsonArrayBuilder productarray = Json.createArrayBuilder();
 
        // JsonObjectBuilder json = Json.createObjectBuilder();
        // JsonArrayBuilder productarray = Json.createArrayBuilder();
     
         
         String query = "select * from master_data";
-        
-        try{
-        
-                      Statement st = con.createStatement();
-                        ResultSet rs = st.executeQuery(query);
-                                
-                  
-       while (rs.next()) {
-
-         
-            json = Json.createObjectBuilder()
-                       .add("productID", rs.getString(1))
-                       .add("name", rs.getString(2))
-                       .add("description", rs.getString(3));
-                       
-              productarray.add(json);
-       }        
-
-        //out.write(productarray.toString());
-        
-        }
+//        
+//        try{
+//        
+//                      Statement st = con.createStatement();
+//                        ResultSet rs = st.executeQuery(query);
+//                                
+//                  
+//       while (rs.next()) {
+//
+//         
+//            json = Json.createObjectBuilder()
+//                       .add("productID", rs.getString(1))
+//                       .add("name", rs.getString(2))
+//                       .add("description", rs.getString(3));
+//                       
+//              productarray.add(json);
+//       }        
+//
+//        //out.write(productarray.toString());
+//        
+//        }
         
         
 
@@ -111,11 +111,11 @@ public class HomePage extends HttpServlet {
 //            }
 //
 //            out.println("</table></br><hr></body></html>");
-//        }
-    catch (SQLException e) {
-
-            e.printStackTrace();
-       }
+////        }
+//    catch (SQLException e) {
+//
+//            e.printStackTrace();
+//       }
 
 //                if(con == null ){
 //
