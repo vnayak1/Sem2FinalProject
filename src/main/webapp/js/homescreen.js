@@ -8,12 +8,12 @@ $(document).ready(function(){
     
     
     
-     //alert("hiiiisfwiii");
+     alert("hiiiisfwiii");
   
       $.ajax({
       url:"home",
       method: "get",
-      dataType: 'json',       
+            
       success:function(data)
       {
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
