@@ -12,7 +12,7 @@ $(document).ready(function(){
   
     $.ajax({
       url:"home",
-      method: "post",
+      method: "get",
       
       success:function(data)
       {
