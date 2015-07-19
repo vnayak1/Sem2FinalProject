@@ -16,13 +16,15 @@ $(document).ready(function(){
             
       success:function(data)
       {
+          
+          
+          var data1=jQuery.parseJSON(data);
+          for(var i in data1)
+          {
+              alert(data1.name);
+          }
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
-        alert(data);
         
-          $.each(data, function(index,value)
-        {
-           alert(value); 
-        });
       }
       
    
