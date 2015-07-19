@@ -8,15 +8,15 @@ $(document).ready(function(){
     
     
     
-     alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
+     alert("hiiiisfwiii");
   
     $.ajax({
-      url:"homepage",
-      method: "get",
+      url:"http://localhost:8080/home",
+      method: "post",
       
       success:function(data)
       {
-          alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
+          //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
           alert(data);
       }
       
