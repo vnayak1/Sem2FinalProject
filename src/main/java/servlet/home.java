@@ -103,7 +103,7 @@ public class home extends HttpServlet {
                  
             }
 
-            out.write(users.toString());
+            out.print(users);
 
         } catch (SQLException ex) {
 
