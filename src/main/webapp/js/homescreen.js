@@ -18,6 +18,11 @@ $(document).ready(function(){
       {
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
           alert(data);
+          var list=data;
+          for(var i in list)
+          {
+              alert(list[i]);
+          }
       }
       
    
