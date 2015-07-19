@@ -11,7 +11,7 @@ $(document).ready(function(){
      alert("hiiiisfwiii");
   
     $.ajax({
-      url:"http://localhost:8080/home",
+      url:"home",
       method: "post",
       
       success:function(data)
