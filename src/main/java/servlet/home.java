@@ -74,7 +74,7 @@ public class home extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        out.write("exception coccure123");
+        //out.write("exception coccure123");
         // JsonObjectBuilder json = Json.createObjectBuilder();
         //JsonArrayBuilder productarray = Json.createArrayBuilder();
         
@@ -98,7 +98,7 @@ public class home extends HttpServlet {
 
             while (rs.next()) {
 
-                user  pnew = new user(rs.getInt(0),rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4));
+                user  pnew = new user(rs.getInt(1),rs.getString(2),rs.getString(3), rs.getString(4),rs.getString(5));
                 users.add(pnew);
                  
             }
@@ -107,7 +107,7 @@ public class home extends HttpServlet {
 
         } catch (SQLException ex) {
 
-            out.write("exception coccure");
+            out.write("exception coccure eallyy");
             Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
         }
 
