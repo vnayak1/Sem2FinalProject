@@ -125,7 +125,7 @@ public class home extends HttpServlet {
         
           PrintWriter out = response.getWriter();
    
-            out.write("exception coccure123");
+            out.println("exception coccure123");
     JsonObjectBuilder json = Json.createObjectBuilder();
    JsonArrayBuilder productarray = Json.createArrayBuilder();
    Connection conn = database.getConnection();
