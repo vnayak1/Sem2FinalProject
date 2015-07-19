@@ -18,11 +18,10 @@ $(document).ready(function(){
       {
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
           alert(data);
-          var list=data;
-          for(var i in list)
-          {
-              console.log(list[i]);
-          }
+        $.each(data, function(index,value)
+        {
+           alert(value); 
+        });
       }
       
    
