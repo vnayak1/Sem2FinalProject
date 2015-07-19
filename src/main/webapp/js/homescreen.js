@@ -13,12 +13,13 @@ $(document).ready(function(){
       $.ajax({
       url:"home",
       method: "get",
-        dataType: 'text',
+       
       success:function(data)
       {
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
-          alert(data);
-        $.each(data, function(index,value)
+        alert(data);
+        
+          $.each(data, function(index,value)
         {
            alert(value); 
         });
