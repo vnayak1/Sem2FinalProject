@@ -97,7 +97,11 @@ public class home extends HttpServlet {
        }
        
        out.write(productarray.toString());
+       
+       
          } catch (SQLException ex) {
+             
+             out.write("exception coccure");
             Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
         }
        
