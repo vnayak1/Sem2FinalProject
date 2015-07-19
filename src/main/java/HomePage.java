@@ -54,10 +54,10 @@ public class HomePage extends HttpServlet {
         Connection con = database.getConnection();
         PrintWriter out = response.getWriter();
 
-        out.write("hiiiiiiiiiiiiii");
+        out.write("hiiiiiiiiiiiiii12");
        
 
-        JsonObjectBuilder json = Json.createObjectBuilder();
+        JsonObjectBuilder json;
         JsonArrayBuilder productarray = Json.createArrayBuilder();
 
        // JsonObjectBuilder json = Json.createObjectBuilder();

@@ -11,7 +11,7 @@ $(document).ready(function(){
      alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
   
     $.ajax({
-      url:"homepage1",
+      url:"homepage",
       method: "get",
       
       success:function(data)
