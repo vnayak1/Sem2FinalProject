@@ -19,6 +19,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,7 +47,7 @@ public class home extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title>Servlet NewServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
@@ -70,54 +71,46 @@ public class home extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
       //  processRequest(request, response);
+
+        PrintWriter out = response.getWriter();
+
+        out.write("exception coccure123");
+        // JsonObjectBuilder json = Json.createObjectBuilder();
+        //JsonArrayBuilder productarray = Json.createArrayBuilder();
+        
+        user p = new user();
+        ArrayList<user> users= new ArrayList<user>();
         
         
-    PrintWriter out = response.getWriter();
-   
-            out.write("exception coccure123");
-   // JsonObjectBuilder json = Json.createObjectBuilder();
-   //JsonArrayBuilder productarray = Json.createArrayBuilder();
-   Connection conn = database.getConnection();
-        
-   if(conn == null)
-   {
-   out.println("null");
-   }else{
-   
-   
-   out.println("not null");
-   }
-   
-   
-//   
-//              try {
-//           Statement smt = conn.createStatement();
-//           
-//           
-//           ResultSet rs = smt.executeQuery("select * from wishfinder ");
-//      
-//
-//     
-//       while (rs.next()) {
-//
-//          
-//            json = Json.createObjectBuilder()
-//                        .add("name", rs.getString(1))
-//                       .add("description", rs.getString(2))
-//                       .add("quantity", rs.getString(3));
-//              productarray.add(json);
-//       }
-//       
-//       out.write(productarray.toString());
-//       
-//       
-//         } catch (SQLException ex) {
-//             
-//             out.write("exception coccure");
-//            Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-       
-        
+        Connection conn = database.getConnection();
+
+        if (conn == null) {
+            out.println("null");
+        } else {
+
+            out.println("not null");
+        }
+
+        try {
+            Statement smt = conn.createStatement();
+
+            ResultSet rs = smt.executeQuery("select * from master_data");
+
+            while (rs.next()) {
+
+                user  pnew = new user(rs.getInt(0),rs.getString(1),rs.getString(2), rs.getString(3),rs.getString(4));
+                users.add(pnew);
+                 
+            }
+
+            out.write(users.toString());
+
+        } catch (SQLException ex) {
+
+            out.write("exception coccure");
+            Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -132,42 +125,11 @@ public class home extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        // processRequest(request, response);
-        
-          PrintWriter out = response.getWriter();
-   
-            out.println("exception coccure123");
-    JsonObjectBuilder json = Json.createObjectBuilder();
-   JsonArrayBuilder productarray = Json.createArrayBuilder();
-   Connection conn = database.getConnection();
-        
-   
-              try {
-           Statement smt = conn.createStatement();
-           
-           
-           ResultSet rs = smt.executeQuery("select * from master_data ");
-      
 
-     
-       while (rs.next()) {
+        PrintWriter out = response.getWriter();
 
-          
-            json = Json.createObjectBuilder()
-                        .add("name", rs.getString(1))
-                       .add("description", rs.getString(2))
-                       .add("quantity", rs.getString(3));
-              productarray.add(json);
-       }
-       
-       out.write(productarray.toString());
-       
-       
-         } catch (SQLException ex) {
-             
-             out.write("exception coccure");
-            Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+        out.println("Post method");
+
     }
 
     /**
