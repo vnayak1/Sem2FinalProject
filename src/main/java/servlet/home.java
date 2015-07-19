@@ -79,12 +79,22 @@ public class home extends HttpServlet {
    JsonArrayBuilder productarray = Json.createArrayBuilder();
    Connection conn = database.getConnection();
         
+   if(conn == null)
+   {
+   out.println("null");
+   }else{
+   
+   
+   out.println("not null");
+   }
+   
+   
    
               try {
            Statement smt = conn.createStatement();
            
            
-           ResultSet rs = smt.executeQuery("select * from master_data ");
+           ResultSet rs = smt.executeQuery("select * from wishfinder ");
       
 
      
