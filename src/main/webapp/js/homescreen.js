@@ -21,7 +21,7 @@ $(document).ready(function(){
           var list=data;
           for(var i in list)
           {
-              alert(list[i]);
+              console.log(list[i]);
           }
       }
       
