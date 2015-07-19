@@ -121,7 +121,43 @@ public class home extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       // processRequest(request, response);
+        
+          PrintWriter out = response.getWriter();
+   
+            out.write("exception coccure123");
+    JsonObjectBuilder json = Json.createObjectBuilder();
+   JsonArrayBuilder productarray = Json.createArrayBuilder();
+   Connection conn = database.getConnection();
+        
+   
+              try {
+           Statement smt = conn.createStatement();
+           
+           
+           ResultSet rs = smt.executeQuery("select * from master_data ");
+      
+
+     
+       while (rs.next()) {
+
+          
+            json = Json.createObjectBuilder()
+                        .add("name", rs.getString(1))
+                       .add("description", rs.getString(2))
+                       .add("quantity", rs.getString(3));
+              productarray.add(json);
+       }
+       
+       out.write(productarray.toString());
+       
+       
+         } catch (SQLException ex) {
+             
+             out.write("exception coccure");
+            Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }
 
     /**
