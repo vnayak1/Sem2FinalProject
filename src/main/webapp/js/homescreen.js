@@ -10,9 +10,9 @@ $(document).ready(function(){
     
      alert("hiiiisfwiii");
   
-    $.ajax({
+      $.ajax({
       url:"home",
-      method: "post",
+      method: "get",
       
       success:function(data)
       {
