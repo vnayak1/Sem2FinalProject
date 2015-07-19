@@ -8,7 +8,7 @@ $(document).ready(function(){
     
     
     
-     alert("hiiiisfwiii");
+     //alert("hiiiisfwiii");
   
       $.ajax({
       url:"home",
