@@ -19,9 +19,11 @@ $(document).ready(function(){
           
           
           var data1=jQuery.parseJSON(data);
+
+          alert(data1);
           for(var i in data1)
           {
-              alert(data1.name);
+              alert(data1[i].name);
           }
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
         
