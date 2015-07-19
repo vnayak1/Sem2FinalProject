@@ -15,11 +15,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import DatabaseCredentials.database;
+import com.google.gson.Gson;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import static java.util.Collections.list;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -102,8 +104,8 @@ public class home extends HttpServlet {
                 users.add(pnew);
                  
             }
-
-            out.print(users);
+            String json = new Gson().toJson(users);
+            out.print(json);
 
         } catch (SQLException ex) {
 

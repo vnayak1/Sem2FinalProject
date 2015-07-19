@@ -13,7 +13,7 @@ $(document).ready(function(){
       $.ajax({
       url:"home",
       method: "get",
-      
+        dataType: 'text',
       success:function(data)
       {
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
