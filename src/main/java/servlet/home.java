@@ -7,10 +7,20 @@ package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
+import javax.json.JsonObjectBuilder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import DatabaseCredentials.database;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -59,7 +69,38 @@ public class home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+      //  processRequest(request, response);
+        
+        
+    PrintWriter out = response.getWriter();
+   JsonObjectBuilder json = Json.createObjectBuilder();
+   JsonArrayBuilder productarray = Json.createArrayBuilder();
+   Connection conn = database.getConnection();
+        
+   
+              try {
+           Statement smt = conn.createStatement();
+           
+           
+           ResultSet rs = smt.executeQuery("select * from master_data ");
+      
+
+     
+       while (rs.next()) {
+
+          
+            json = Json.createObjectBuilder()
+                        .add("name", rs.getString(1))
+                       .add("description", rs.getString(2))
+                       .add("quantity", rs.getString(3));
+              productarray.add(json);
+       }
+       
+       out.write(productarray.toString());
+         } catch (SQLException ex) {
+            Logger.getLogger(home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
         
     }
 
