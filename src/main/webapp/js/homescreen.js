@@ -17,14 +17,10 @@ $(document).ready(function(){
       success:function(data)
       {
           
-          
-          var data1=jQuery.parseJSON(data);
+
 
           alert(data);
-          for(var i in data1)
-          {
-              alert(data1[i].name);
-          }
+         
           //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
         
       }
