@@ -17,6 +17,11 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+	 <repository>
+	  <id>unknown-jars-temp-repo</id>
+	  <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+	  <url>file:${project.basedir}/lib</url>
+	 </repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -49,7 +54,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 	 <dependency>
@@ -80,6 +85,16 @@
 	  <artifactId>gson</artifactId>
 	  <version>1.2.2</version>
 	  <type>jar</type>
+	 </dependency>
+	 <dependency>
+	  <groupId>unknown.binary</groupId>
+	  <artifactId>javax.ws.rs-api-2.0</artifactId>
+	  <version>SNAPSHOT</version>
+	 </dependency>
+	 <dependency>
+	  <groupId>javax</groupId>
+	  <artifactId>javaee-api</artifactId>
+	  <version>7.0</version>
 	 </dependency>
 	</dependencies>
 	<profiles>
