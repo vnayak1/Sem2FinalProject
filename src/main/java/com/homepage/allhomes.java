@@ -19,7 +19,7 @@ import javax.ws.rs.PUT;
 /**
  * REST Web Service
  *
- * @author c0652113
+ * @author c0651659
  */
 @Stateful
 @Path("allhomes")

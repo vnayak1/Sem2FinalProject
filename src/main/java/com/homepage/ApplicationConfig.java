@@ -10,7 +10,7 @@ import java.util.Set;
 
 /**
  *
- * @author c0652113
+ * @author c0651659
  */
 @javax.ws.rs.ApplicationPath("api")
 public class ApplicationConfig extends javax.ws.rs.core.Application {
