@@ -10,26 +10,13 @@ $(document).ready(function(){
     
      alert("hiiiisfwiii");
   
-      $.ajax({
-      url:"home",
-      method: "get",
-      //contentType: 'application/json',
-      //mimeType: 'application/json',
-            
-      success:function(data)
-      {
-          
-
-
-          alert(data);
-         
-          //alert("hiiiiiiiiiiiiiiwefwgfsfersfwiii");
+    $.getJSON("home", function(data){
         
-      }
+        alert(data);
+        
+    });
       
-   
-      
-   });
+  
     
     
 });
