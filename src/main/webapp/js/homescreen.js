@@ -13,8 +13,8 @@ $(document).ready(function(){
       $.ajax({
       url:"home",
       method: "get",
-      contentType: 'application/json',
-      mimeType: 'application/json',
+      //contentType: 'application/json',
+      //mimeType: 'application/json',
             
       success:function(data)
       {
